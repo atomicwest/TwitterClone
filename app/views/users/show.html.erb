@@ -1,0 +1,24 @@
+<h1 class="name"  data-name="<%= @user.username %>"><%= @user.username %></h1>
+
+<%= render "follows/form", user: @user %>
+
+<b>Posts</b>
+<ul id="feed">
+  <% @user.tweets.each do |tweet| %>
+    <li><%= render "tweets/tweet", tweet: tweet %></li>
+  <% end %>
+</ul>
+
+<b>Followers</b>
+<ul>
+  <% @user.followers.each do |follower| %>
+    <li><%= follower.username %></li>
+  <% end %>
+</ul>
+
+<b>People you Follow</b>
+<ul>
+  <% @user.followees.each do |followee| %>
+    <li><%= followee.username %></li>
+  <% end %>
+</ul>

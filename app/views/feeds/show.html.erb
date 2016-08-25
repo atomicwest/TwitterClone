@@ -1,0 +1,10 @@
+<h1>Hello, <%= current_user.username %></h1>
+
+<b>Recent Posts</b>
+<ul id="feed">
+  <% @feed_tweets.each do |tweet| %>
+    <li><%= render "tweets/tweet", tweet: tweet %></li>
+  <% end %>
+</ul>
+
+<%= render "tweets/form" %>
